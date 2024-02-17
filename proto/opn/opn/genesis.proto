@@ -1,0 +1,17 @@
+syntax = "proto3";
+package opn.opn;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "opn/opn/params.proto";
+
+option go_package = "opn/x/opn/types";
+
+// GenesisState defines the opn module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
